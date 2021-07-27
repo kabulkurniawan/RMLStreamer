@@ -61,7 +61,7 @@ class NopPostProcessor extends PostProcessor {
   override def process(serializableRDFQuads: Iterable[SerializableRDFQuad]): Iterable[(String, String)] = {
     serializableRDFQuads.flatMap(quad => {
       val quadStr = quad.toString
-      for (logicalTargetID <- quad.logicalTargetIDs) yield (logicalTargetID, quadStr)
+      for (logicalTargetID <- quad.logicalTargetIDs) yield (logicalTargetID, quadStr+"\n")
     })
   }
 
